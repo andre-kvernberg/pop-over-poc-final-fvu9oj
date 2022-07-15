@@ -1,0 +1,68 @@
+<button mat-raised-button [popoverTrigger]="dados">
+  insira dados pessoais
+</button>
+
+<button mat-raised-button [popoverTrigger]="dadosLista">
+  veja dados pessoais
+</button>
+
+<p [popoverTrigger]="popoverVazio">
+  Popover no texto
+</p>
+
+
+<ng-template #popoverVazio>
+  <popover-container>
+    <p>exemplo de popovere acionado por um texto</p>
+    <button mat-raised-button color="primary" (click)="closePopover()">
+      Fechar
+    </button>
+  </popover-container>
+</ng-template>
+
+<ng-template #dadosLista>
+  <popover-container>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Nome: {{nome}}</mat-list-item>
+      <mat-list-item role="listitem">Telefone: {{telefone}}</mat-list-item>
+      <mat-list-item role="listitem">Endereço: {{endereco}}</mat-list-item>
+    </mat-list>
+    <button mat-raised-button color="primary" (click)="closePopover()">
+      Fechar
+    </button>
+  </popover-container>
+</ng-template>
+
+<ng-template #dados>
+  <popover-container>
+    <mat-form-field class="example-form-field">
+      <mat-label>Entre com seu nome</mat-label>
+      <input matInput type="text" [(ngModel)]="nome">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-form-field">
+      <mat-label>Entre com seu telefone</mat-label>
+      <input matInput type="text" [(ngModel)]="telefone">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-form-field">
+      <mat-label>Entre com seu endereço</mat-label>
+      <input matInput type="text" [(ngModel)]="endereco">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" (click)="closePopover()">
+      Salvar
+    </button>
+  </popover-container>
+</ng-template>
+
+<button mat-raised-button [popoverTrigger]="popover" [closeOnClickOutside]="true">
+  clique para abrir
+</button>
+
+<ng-template #popover>
+  <popover-container>
+    <p>teste de popover com o fechar sendo o clique fora
+    </p>
+  </popover-container>
+</ng-template>

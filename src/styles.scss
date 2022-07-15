@@ -1,0 +1,7 @@
+/* Add application styles & imports to this file! */
+@import "~@angular/cdk/overlay-prebuilt.css";
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.backdropTransparent {
+  background: transparent;
+}
